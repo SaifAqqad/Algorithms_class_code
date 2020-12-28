@@ -1,8 +1,7 @@
 function merge(arr, p, q, r) {
     let sub_1 = arr.slice(p, q + 1),
-        sub_2 = arr.slice(q + 1, r + 1),
-        length = r - p + 1;
-    for (let i = p; i < length; i++) {
+        sub_2 = arr.slice(q + 1, r + 1);
+    for (let i = p; i <= r; i++) {
         if (sub_1.length > 0 && sub_2.length > 0) {
             if (sub_2[0] < sub_1[0])
                 arr[i] = sub_2.shift()
