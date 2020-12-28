@@ -16,9 +16,15 @@ function merge(arr, p, q, r) {
 function mergeSort(arr, p = 0, r = arr.length - 1) {
     if (p < r) {
         let q = Math.floor((p + r) / 2);
-        mergeSort(arr, p, q);
-        mergeSort(arr, q + 1, r)
-        merge(arr, p, q, r)
+        mergeSort(arr, p, q);       // T(n/2)
+        mergeSort(arr, q + 1, r)    // T(n/2)
+        merge(arr, p, q, r)         // n
+        //  T(n) = 2T(n/2) + n  ; i=1
+        //       = 4T(n/4) + 2n ; i=2
+        //       = 8T(n/8) + 3n ; i=3
+        //       = 2^iT(n/(2^i)) + i*n
+        //       = nT(1) + nlgn ; i=lgn
+        //       = O(nlgn)
     }
 }
 
