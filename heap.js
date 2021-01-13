@@ -69,9 +69,16 @@ function heapInsert(heap, val) {
     }
 } // O(lgn)
 
+function heapRemove(heap, i) {
+    heap[i] = heap.pop()
+    for (; i >= 0; i = Math.floor((i - 1) / 2)) { // lgi + 1
+        maxHeapify(heap, i, heap.length); // lgn
+    }
+} // O(lgi * lgn)
+
 // let heap = [16, 14, 10, 8, 12, 9, 3, 2, 4, 1, 7];
 // console.log({ heap });
 // extractMax(heap);
 // console.log({ heap });
-// heapInsert(heap, 11)
+// heapRemove(heap, 0)
 // console.log({ heap });
