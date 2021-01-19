@@ -48,6 +48,6 @@ v[11] = new LLNode(12, new LLNode(6, null));
 v[12] = new LLNode(11, new LLNode(6, null));
 // sum of length of all linked lists = 2|E| (undirected graph)
 
-let [distance, predecessor] = bfs(v, 0)
+let [distance, predecessor] = bfs(v, 1)
 
 console.log({ distance, predecessor })
